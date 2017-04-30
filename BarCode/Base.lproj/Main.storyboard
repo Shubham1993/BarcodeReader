@@ -1,25 +1,101 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJg-Js-9vc">
+                                <rect key="frame" x="0.0" y="534" width="320" height="34"/>
+                                <color key="backgroundColor" red="0.16051944749745206" green="0.28269030651695726" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startCapture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LDO-ER-ANJ"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c2b-Gl-9zT">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="526"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="TJg-Js-9vc" secondAttribute="trailing" id="Apn-b3-jQn"/>
+                            <constraint firstItem="TJg-Js-9vc" firstAttribute="top" secondItem="c2b-Gl-9zT" secondAttribute="bottom" constant="8" id="EVp-wj-LaZ"/>
+                            <constraint firstAttribute="trailing" secondItem="c2b-Gl-9zT" secondAttribute="trailing" id="JfM-GV-oxj"/>
+                            <constraint firstItem="TJg-Js-9vc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ajt-mZ-sol"/>
+                            <constraint firstItem="c2b-Gl-9zT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gbW-gV-A5d"/>
+                            <constraint firstItem="c2b-Gl-9zT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hqN-WO-4xc"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="TJg-Js-9vc" secondAttribute="bottom" id="wc8-I6-TP9"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scannerView" destination="c2b-Gl-9zT" id="CBT-43-F6R"/>
+                        <segue destination="GO8-Do-HWq" kind="push" identifier="barcodeDataSegue" id="5Tu-QB-bb6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="153" y="280"/>
+        </scene>
+        <!--Barcode Data View Controller-->
+        <scene sceneID="hAM-xe-Trd">
+            <objects>
+                <viewController id="GO8-Do-HWq" customClass="barcodeDataViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HmX-Xs-umY"/>
+                        <viewControllerLayoutGuide type="bottom" id="JE8-sf-tmb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gga-PN-sVQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BarCode Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYq-DO-xhI">
+                                <rect key="frame" x="107" y="138" width="107" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No barcode scanned" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvc-hA-u90">
+                                <rect key="frame" x="20" y="275" width="280" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.1605194475" green="0.28269030649999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="uvc-hA-u90" secondAttribute="trailing" constant="20" id="1Be-9s-eKH"/>
+                            <constraint firstItem="QYq-DO-xhI" firstAttribute="centerX" secondItem="gga-PN-sVQ" secondAttribute="centerX" id="K0K-w7-fsF"/>
+                            <constraint firstItem="QYq-DO-xhI" firstAttribute="top" secondItem="HmX-Xs-umY" secondAttribute="bottom" constant="118" id="OGm-ay-M2s"/>
+                            <constraint firstItem="uvc-hA-u90" firstAttribute="centerY" secondItem="gga-PN-sVQ" secondAttribute="centerY" id="Ss2-bN-4Tl"/>
+                            <constraint firstItem="uvc-hA-u90" firstAttribute="centerX" secondItem="gga-PN-sVQ" secondAttribute="centerX" id="Upa-Sr-mCS"/>
+                            <constraint firstItem="uvc-hA-u90" firstAttribute="leading" secondItem="gga-PN-sVQ" secondAttribute="leading" constant="20" id="tsc-xF-CNW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="pNu-5J-eZf"/>
+                    <connections>
+                        <outlet property="barcodeLabel" destination="uvc-hA-u90" id="wLs-n0-xyw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wv2-Dj-pjX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="535" y="280"/>
         </scene>
     </scenes>
 </document>

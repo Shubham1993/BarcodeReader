@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<AVCaptureMetadataOutputObjectsDelegate>
+@property (weak, nonatomic) IBOutlet UIView *scannerView;
 
+- (IBAction)startCapture:(id)sender;
+@property NSString *outputData;
 
 @end
 

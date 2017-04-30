@@ -13,6 +13,7 @@
 		51062CF01EB2643200A3D4D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51062CEE1EB2643200A3D4D9 /* Main.storyboard */; };
 		51062CF21EB2643200A3D4D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51062CF11EB2643200A3D4D9 /* Assets.xcassets */; };
 		51062CF51EB2643200A3D4D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51062CF31EB2643200A3D4D9 /* LaunchScreen.storyboard */; };
+		51062CFE1EB2741900A3D4D9 /* barcodeDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51062CFD1EB2741900A3D4D9 /* barcodeDataViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		51062CF11EB2643200A3D4D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51062CF41EB2643200A3D4D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		51062CF61EB2643200A3D4D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51062CFC1EB2741900A3D4D9 /* barcodeDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = barcodeDataViewController.h; sourceTree = "<group>"; };
+		51062CFD1EB2741900A3D4D9 /* barcodeDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = barcodeDataViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 				51062CE91EB2643200A3D4D9 /* AppDelegate.m */,
 				51062CEB1EB2643200A3D4D9 /* ViewController.h */,
 				51062CEC1EB2643200A3D4D9 /* ViewController.m */,
+				51062CFC1EB2741900A3D4D9 /* barcodeDataViewController.h */,
+				51062CFD1EB2741900A3D4D9 /* barcodeDataViewController.m */,
 				51062CEE1EB2643200A3D4D9 /* Main.storyboard */,
 				51062CF11EB2643200A3D4D9 /* Assets.xcassets */,
 				51062CF31EB2643200A3D4D9 /* LaunchScreen.storyboard */,
@@ -152,6 +157,7 @@
 				51062CED1EB2643200A3D4D9 /* ViewController.m in Sources */,
 				51062CEA1EB2643200A3D4D9 /* AppDelegate.m in Sources */,
 				51062CE71EB2643200A3D4D9 /* main.m in Sources */,
+				51062CFE1EB2741900A3D4D9 /* barcodeDataViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +270,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BarCode/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shubham.BarCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -275,6 +282,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BarCode/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shubham.BarCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
